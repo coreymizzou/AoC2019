@@ -8,21 +8,23 @@ splitData = data.split(",")
 #converts items in list to integer type
 for y in range(len(splitData)):
     splitData[y] = int(splitData[y])
-    
-i = 0
 
 #op add
-while (splitData[i] != 99):
-    if (int(splitData[i]) == 1):
-        a = splitData[i+1]
-        b = splitData[i+2]
-        c = splitData[i+3]
-        splitData[c] = splitData[a] + splitData[b]
-        i += 4
-    elif (int(splitData[i]) == 2):
-        a = splitData[i+1]
-        b = splitData[i+2]
-        c = splitData[i+3]
-        splitData[c] = splitData[a] * splitData[b]
-        i += 4
-print(splitData[0])
+def opcode(data):
+    i = 0
+    while (data[i] != 99):
+        if (int(data[i]) == 1):
+            a = data[i+1]
+            b = data[i+2]
+            c = data[i+3]
+            data[c] = data[a] + data[b]
+            i += 4
+        elif (int(data[i]) == 2):
+            a = data[i+1]
+            b = data[i+2]
+            c = data[i+3]
+            data[c] = data[a] * data[b]
+            i += 4
+    return data[0]
+
+print(opcode(splitData))
