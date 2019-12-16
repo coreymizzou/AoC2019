@@ -10,8 +10,11 @@ for y in range(len(splitData)):
     splitData[y] = int(splitData[y])
 
 #op add
-def opcode(data):
+def opcode(data, 12, 2):
     i = 0
+    prog = data[:]
+    prog[1] = noun
+    prog[2] = verb
     while (data[i] != 99):
         if (int(data[i]) == 1):
             a = data[i+1]
