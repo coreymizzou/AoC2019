@@ -27,4 +27,11 @@ def opcode(data):
             i += 4
     return data[0]
 
+def part2(data):
+    for noun in range(100):
+        for verb in range(100):
+            if part1(data, noun, verb) == 19690720:
+                return 100 * noun + verb
+
 print(opcode(splitData))
+print(part2(splitData))
